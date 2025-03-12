@@ -24,7 +24,7 @@ a{
     padding-bottom: 0;
     margin-bottom: 5px;
     /* padding-right: 130px; */
-    font-family: 'Dancing Script', cursive;
+    /* font-family: cursive; */
     border-radius: 50px;
     /* background-color: rgb(177, 173, 173); */
     width: 100%;
@@ -57,7 +57,7 @@ button:hover {
     background-color: rgb(97, 95, 95);
 }
 .details {
-    font-size: large;
+    font-size: larger;
     padding-top: 75px;
     justify-content: left;
     width: max;
