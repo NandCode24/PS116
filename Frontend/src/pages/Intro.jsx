@@ -4,6 +4,8 @@ import logo from '../assets/learnsync_no_bg.png'
 function Intro() {
   return (
     <div>
+        <meta charSet='UTF-8'/>
+        <meta name='viewport' content='width=device-width, initial-scale=1'/>
         <div className='Intro'>
             <img src={logo} alt="" width='max' height='500px'/>
             <div className='para'>
