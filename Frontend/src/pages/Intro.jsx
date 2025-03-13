@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../assets/learnsync_no_bg.png'
+import { NavLink, Outlet } from 'react-router-dom'
 
 function Intro() {
   return (
@@ -25,15 +26,15 @@ function Intro() {
                 </div>
 
                 <div className='btn'>
-                    <button id='1'>Enroll as Student</button>
-                    <button id='2'>Enroll as Tutor</button>
-                    <button id='3'>Enroll as Parent</button>
-                    <button id='4'>Create Institute</button>
+                    <NavLink to='/student'><button >Enroll as Student</button></NavLink>
+                    <NavLink to='/tutor'><button >Enroll as Tutor</button></NavLink>
+                    <NavLink to='/parent'><button >Enroll as Parent</button></NavLink>
+                    <NavLink to='/institute'><button >Create Institute</button></NavLink>
                 </div>
             </div>
            
         </div>
-        
+        <Outlet />
     </div>
   )
 }
