@@ -4,9 +4,9 @@ import { Outlet } from 'react-router-dom'
 
 function TutorRegisterLayout() {
   return (
-    <div>
+    <div className='commonLayout'>
         <TutorRegister />
-        <Outlet />
+        <div className='commonLayoutInfo'><Outlet /></div>
     </div>
   )
 }

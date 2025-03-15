@@ -4,9 +4,9 @@ import { Outlet } from 'react-router-dom'
 
 function InstituteRegisterLayout() {
   return (
-    <div>
-        <InstituteRegister />
-        <Outlet />
+    <div className='commonLayout'>
+      <InstituteRegister />  
+      <div className='commonLayoutInfo'><Outlet /></div>
     </div>
   )
 }

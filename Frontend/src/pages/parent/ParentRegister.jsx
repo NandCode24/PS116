@@ -10,7 +10,7 @@ function ParentLogin() {
         
         <div className='registerBtn'>
           <button onClick={() => navigate('parentlogin')}>Login</button>
-          <button onClick={() => navigate('parentSignup')}>Signup</button>
+          <button onClick={() => navigate('parentsignup')}>Signup</button>
         </div>
     </div>
   )

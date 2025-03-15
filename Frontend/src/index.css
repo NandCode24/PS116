@@ -72,6 +72,10 @@ button:hover {
     display: grid;
     place-items: center;
     height: 50vh;
+    padding-top: 10rem;
+    padding-left: 0;
+    padding-right: 5rem;
+    
 }
 
 .register h1{
@@ -85,7 +89,7 @@ button:hover {
 .registerBtn {
     display: flex;
     font-size: medium;
-    padding-top: 15px;
+    padding-top: 6rem;
     justify-content: space-between;
     gap: 2rem;
 }
@@ -104,4 +108,168 @@ button:hover {
 }
 .registerBtn button:hover {
     background-color: rgb(80, 79, 79);
+}
+/* STYLING FOR LOGIN SIGNUP PAGES */
+.commonLayout {
+    display: flex;
+    justify-items: center;
+}
+
+/* LOGIN PART */
+/* Center the login form */
+.commonLayoutInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f4f4f4; */
+    margin: 0;
+    /* margin-top: -3rem; */
+} 
+
+/* Login form container */
+.login-form {
+    width: 400px;
+    padding: 20px;
+    background: rgb(109, 100, 100);
+    border-radius: 8px;
+    border: 2px solid #444;
+    box-shadow: 0px 4px 10px rgba(39, 36, 36, 0.1);
+    color: white;
+}
+
+/* Arrange labels and inputs side by side */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 8px;
+    /* border: 1px solid #bbb; */
+    border-radius: 5px;
+}
+
+/* Style labels */
+label {
+    font-weight: bold;
+    width: 30%;
+}
+
+/* Style input fields */
+input {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    color: black;
+}
+
+/* Style the button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Button hover effect */
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* SIGNUP PART */
+.signup {
+    width: 400px; /* Slightly wider than login form */
+    padding: 1rem;
+    margin-top: -4rem;
+    margin-bottom: 1rem;
+    background: rgb(109, 100, 100);    /* Dark background similar to login */
+    border-radius: 8px;
+    border: 2px solid #444;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: left;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+}
+.role-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Labels */
+.signup label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-right: 1rem;
+}
+
+/* Input Fields */
+.signup input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+/* Radio Buttons */
+.role-container {
+    display: flex;
+    align-items: center;
+    gap: 0; /* Space between 'Role' label and options */
+}
+
+.role-options {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between radio buttons and labels */
+}
+
+.role-options input {
+    margin: 0 5px 0 15px; /* Adds space between radio button and label */
+}
+
+
+/* Submit Button */
+.signup button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background: #0056b3;
+}
+
+input[type="tel"],
+input[type="email"] {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.institute-form {
+    width: 500px; /* Adjust width as needed */
+    margin: auto; /* Center it horizontally */
 }
