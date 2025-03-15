@@ -4,14 +4,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = mysql.createPool({
-  // host: process.env.DB_HOST,
-  // user: process.env.DB_USER,
-  // password: process.env.DB_PASS,
-  // database: process.env.DB_NAME,
-  host: 'localhost',
-  user: 'root',
-  password: '2477',
-  database: "Sample_DB",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  // host: 'localhost',
+  // user: 'root',
+  // password: '2477',
+  // database: "Sample_DB",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -32,4 +32,4 @@ const data = await pool.execute(`
   
   console.log(data)
 
-export default pool;
+export {pool} ;
