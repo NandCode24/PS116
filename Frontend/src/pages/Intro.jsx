@@ -26,15 +26,15 @@ function Intro() {
                 </div>
 
                 <div className='btn'>
-                    <NavLink to='/student'><button >Enroll as Student</button></NavLink>
-                    <NavLink to='/tutor'><button >Enroll as Tutor</button></NavLink>
-                    <NavLink to='/parent'><button >Enroll as Parent</button></NavLink>
-                    <NavLink to='/institute'><button >Create Institute</button></NavLink>
+                    <NavLink to='/studentregister'><button >Enroll as Student</button></NavLink>
+                    <NavLink to='/tutorregister'><button >Enroll as Tutor</button></NavLink>
+                    <NavLink to='/parentregister'><button >Enroll as Parent</button></NavLink>
+                    <NavLink to='/instituteregister'><button >Create Institute</button></NavLink>
                 </div>
             </div>
-           
+            
         </div>
-        <Outlet />
+        {/* <Outlet /> */}
     </div>
   )
 }
