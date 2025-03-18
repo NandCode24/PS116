@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Institutelogin() {
   return (
@@ -15,7 +16,7 @@ function Institutelogin() {
           <input type="password" name="password" required />
         </div>
 
-        <button type="submit" className="login-btn">Login</button>
+        <NavLink to='/institutehome'><button type="submit" className="login-btn">Login</button></NavLink>
       </form>
     </div>
   )

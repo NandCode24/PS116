@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function TutorSignup() {
   return (
@@ -26,7 +27,7 @@ function TutorSignup() {
             <label>Password:</label>
             <input type='password' name='tutorPassword' required/><br/>
 
-            <button type='submit'>Submit</button>
+            <NavLink to='/tutorhome'><button type='submit'>Submit</button></NavLink>
           </div>
         </form>
     </div>

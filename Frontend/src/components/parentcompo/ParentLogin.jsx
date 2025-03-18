@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function ParentLogin() {
   return (
@@ -15,7 +16,7 @@ function ParentLogin() {
           <input type="password" name="password" required />
         </div>
 
-        <button type="submit" className="login-btn">Login</button>
+        <NavLink to='/parenthome'><button type="submit" className="login-btn">Login</button></NavLink>
       </form>
     </div>
   )

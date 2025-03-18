@@ -1,14 +1,23 @@
 import React from 'react'
 import './App.css'
 import Intro from './pages/Intro'
+
+import InstituteHomeLayout from './layout/institute/InstituteHomeLayout'
 import InstituteHome from './pages/institute/InstituteHome'
+import InstituteCourses from './pages/institute/InstituteCourses'
+
+import ParentHomeLayout from './layout/parent/ParentHomeLayout'
 import ParentHome from './pages/parent/ParentHome'
+import ParentEnrolled from './pages/parent/ParentEnrolled'
+
+import StudentHomeLayout from './layout/student/StudentHomeLayout'
 import StudentHome from './pages/student/StudentHome'
+import StudentEnrolled from './pages/student/StudentEnrolled'
+
+import TutorHomeLayout from './layout/tutor/TutorHomeLayout'
 import TutorHome from './pages/tutor/TutorHome'
-import StudentRegister from './pages/student/StudentRegister'
-import TutorRegister from './pages/tutor/TutorRegister'
-import ParentRegister from './pages/parent/ParentRegister'
-import InstituteRegister from './pages/institute/InstituteRegister'
+import TutorCourses from './pages/tutor/TutorCourses'
+
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 
 import InstituteRegisterLayout from './layout/institute/InstituteRegisterLayout'
@@ -32,6 +41,8 @@ function App() {
     createRoutesFromElements(
       <>
         <Route path='/' element={<Intro />} />
+
+{/* USERS REGISTER ROUTES */}
         <Route path='studentregister' element={<StudentRegisterLayout />}>
           <Route path='studentlogin' element={<StudentLogin />}/>
           <Route path='studentsignup' element={<StudentSignup />}/>
@@ -50,6 +61,26 @@ function App() {
         <Route path='instituteregister' element={<InstituteRegisterLayout />}>
           <Route path='institutelogin' element={<InstituteLogin />}/>
           <Route path='institutesignup' element={<InstituteSignup />}/>
+        </Route>
+{/* USERS HOME ROUES */}
+        <Route path='studenthome' element={<StudentHomeLayout />}>
+          <Route index element={<StudentHome />}/>
+          <Route path='studentenrolled' element={<StudentEnrolled />}/> 
+        </Route>
+
+        <Route path='parenthome' element={<ParentHomeLayout />}>
+          <Route index element={<ParentHome />}/>
+          <Route path='parentenrolled' element={<ParentEnrolled />}/> 
+        </Route>
+
+        <Route path='tutorhome' element={<TutorHomeLayout />}>
+          <Route index element={<TutorHome />}/>
+          <Route path='tutorcourses' element={<TutorCourses />}/> 
+        </Route>
+
+        <Route path='institutehome' element={<InstituteHomeLayout />}>
+          <Route index element={<InstituteHome />}/>
+          <Route path='institutecourses' element={<InstituteCourses />}/> 
         </Route>
 
       </>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function ParentSignup() {
   return (
@@ -39,7 +40,7 @@ function ParentSignup() {
               <label>Student id:</label>
               <input type='number' name='studentId' required/><br/>
 
-              <button type='submit'>Submit</button>
+              <NavLink to='/parenthome'><button type='submit'>Submit</button></NavLink>
           </div>
         </form>
     </div>

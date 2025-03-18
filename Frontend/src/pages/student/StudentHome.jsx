@@ -2,7 +2,7 @@ import React from 'react'
 
 function StudentHome() {
   return (
-    <div>
+    <div className='demo'>
         <h1>Student home page</h1>
     </div>
   )

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 function StudentSignup() {
     const [formData, setFormData] = useState({
@@ -57,7 +58,7 @@ function StudentSignup() {
                     <label>Password:</label>
                     <input type="password" name="password" required value={formData.password} onChange={handleChange} /><br />
 
-                    <button type="submit">Submit</button>
+                    <NavLink to='/studenthome'><button type="submit">Submit</button></NavLink>
                 </div>
             </form>
         </div>

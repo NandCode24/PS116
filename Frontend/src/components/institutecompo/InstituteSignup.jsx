@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function InstituteSignup() {
   return (
@@ -20,7 +21,7 @@ function InstituteSignup() {
             <label>Institute address:</label>
             <input type='text' name='instituteAddress' requiredd/><br/>
 
-            <button type='submit'>Create</button>
+            <NavLink to='/institutehome'><button type='submit'>Create</button></NavLink>
           </div>
         </form>
     </div>
