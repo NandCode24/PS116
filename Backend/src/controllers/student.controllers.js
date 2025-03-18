@@ -72,7 +72,7 @@ export const studentLogin = asyncHandler(async (req, res) => {
 
     if(student.password != password)
     {
-        
+        return res.status(401).json({ error: "Invalid username or password" })
     }
     res.status(200).json({ message: "Login successful", student: { id: student.id, username: student.username } });
 });
