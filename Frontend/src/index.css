@@ -263,7 +263,7 @@ input {
 
 input[type="tel"],
 input[type="email"] {
-    width: 50%;
+    width: 62%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
