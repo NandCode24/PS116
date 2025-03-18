@@ -7,6 +7,7 @@ export const registerStudent = asyncHandler(async (req, res) => {
     try {
         const { firstName, lastName, birthDate, mobileNumber, email, username, password } = req.body;
 
+    
         if (!firstName?.trim() || !lastName?.trim() || !birthDate || 
             !mobileNumber?.toString().trim() || !email?.trim() || !username?.trim() || !password?.trim()) {
             return res.status(400).json({ error: "All fields are required" });
@@ -20,11 +21,9 @@ export const registerStudent = asyncHandler(async (req, res) => {
             return res.status(400).json({ error: "Email or Username already exists" });
         }
 
-        // ✅ Hash password before storing
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        // Insert into database
         await pool.query(
             "INSERT INTO students (first_name, last_name, birth_date, mobile_number, email, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)",
             [firstName, lastName, birthDate, mobileNumber, email, username, hashedPassword]
@@ -38,32 +37,43 @@ export const registerStudent = asyncHandler(async (req, res) => {
     }
 });
 
-
 // ✅ Student Login with Password Verification
 export const studentLogin = asyncHandler(async (req, res) => {
-    const { username, password } = req.body;
-    
-    if (!username || !password) {
-        return res.status(400).json({ error: "Username and password are required" });
+    try {
+        const { username, password } = req.body;
+        
+        if (!username || !password) {
+            return res.status(400).json({ error: "Username and password are required" });
+        }
+
+        const [students] = await pool.query("SELECT * FROM students WHERE username = ?", [username]);
+
+        if (!students || students.length === 0) {
+            return res.status(401).json({ error: "Invalid username or password" });
+        }
+
+        const student = students[0];
+
+        
+
+        if (!student.password) {
+            console.error("❌ Error: Retrieved student has no password stored.");
+            return res.status(500).json({ error: "Internal Server Error" });
+        }
+
+        const isMatch = await bcrypt.compare(password, student.password);
+
+        if (!isMatch) {
+            return res.status(401).json({ error: "Invalid username or password" });
+        }
+
+        res.status(200).json({ 
+            message: "✅ Login successful!", 
+            student_id: student.id
+        });
+
+    } catch (error) {
+        console.error("❌ Error in studentLogin:", error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
-
-    const [students] = await pool.query("SELECT * FROM students WHERE username = ?", [username]);
-    
-
-    if (!students || students.length === 0) {
-        return res.status(401).json({ error: "Invalid username or password" });
-    }
-
-    const student = students[0];
-    
-
-    // Compare passwords
-    const isMatch = await bcrypt.compare(password, student.password);
-    
-
-    if (!isMatch) {
-        return res.status(401).json({ error: "Invalid username or password" });
-    }
-
-    res.status(200).json({ message: "✅ Login successful!", student: { id: student.id, username: student.username } });
 });

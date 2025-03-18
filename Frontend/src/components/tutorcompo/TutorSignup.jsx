@@ -69,7 +69,7 @@ const handleSubmit = async (e) => {
           <label>Password:</label>
           <input type='password' name='password' value={formData.password} onChange={handleChange} required /><br/>
 
-            <NavLink to='/tutorhome'><button type='submit'>Submit</button></NavLink>
+            <button type='submit'>Submit</button>
           </div>
         </form>
 

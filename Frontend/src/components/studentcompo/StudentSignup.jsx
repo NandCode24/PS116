@@ -58,7 +58,7 @@ function StudentSignup() {
                     <label>Password:</label>
                     <input type="password" name="password" required value={formData.password} onChange={handleChange} /><br />
 
-                    <NavLink to='/studenthome'><button type="submit">Submit</button></NavLink>
+                   <button type="submit">Submit</button>
                 </div>
             </form>
         </div>

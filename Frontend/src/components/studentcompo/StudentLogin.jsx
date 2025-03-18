@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink } from 'react-router-dom'
 import axios from "axios";
 
 function StudentLogin() {
@@ -9,7 +8,8 @@ function StudentLogin() {
     });
 
     const [errors, setErrors] = useState({});
-    const [serverError, setServerError] = useState(""); // 🔴 Store backend error
+    const [serverError, setServerError] = useState(""); 
+    const [studentId, setStudentId] = useState(null); // ✅ Store student ID
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,31 +17,26 @@ function StudentLogin() {
 
     const validateForm = () => {
         let newErrors = {};
-
-        if (!formData.username.trim()) {
-            newErrors.username = "Username is required";
-        }
-
-        if (!formData.password.trim()) {
-            newErrors.password = "Password is required";
-        }
-
+        if (!formData.username.trim()) newErrors.username = "Username is required";
+        if (!formData.password.trim()) newErrors.password = "Password is required";
         setErrors(newErrors);
-            return Object.keys(newErrors).length === 0;
+        return Object.keys(newErrors).length === 0;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setServerError(""); // Clear previous errors
+        setServerError(""); 
+        setStudentId(null); // Reset student ID on new login attempt
 
-        if (!validateForm()) return; // ❌ Stop if validation fails
+        if (!validateForm()) return;
 
         try {
             const response = await axios.post("http://localhost:5000/students/login", formData, {
                 headers: { "Content-Type": "application/json" },
             });
 
-            alert(response.data.message); // ✅ Success
+            setStudentId(response.data.student_id); // ✅ Store student ID
+            alert(`✅ Login Successful! Student ID: ${response.data.student_id}`);
         } catch (error) {
             console.error("Login error:", error.response);
             setServerError(error.response?.data?.error || "Invalid credentials");
@@ -60,13 +55,16 @@ function StudentLogin() {
                 <div className="input-group">
                     <label>Password:</label>
                     <input type="password" name="password" value={formData.password} onChange={handleChange} />
-                     {errors.password && <p className="error">{errors.password}</p>}
+                    {errors.password && <p className="error">{errors.password}</p>}
                 </div>
 
-                {serverError && <p className="error">{serverError}</p>} {/* 🔴 Show backend errors */}
+                {serverError && <p className="error">{serverError}</p>} 
 
-                <NavLink to='/studenthome'><button type="submit" className="login-btn">Login</button></NavLink>
+                <button type="submit" className="login-btn">Login</button>
 
+                {studentId && ( // ✅ Display Student ID if login is successful
+                    <p className="success">✅ Logged in! Student ID: <strong>{studentId}</strong></p>
+                )}
             </form>
         </div>
     );
