@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-=======
 import React, { useState } from 'react';
 import axios from 'axios';
->>>>>>> c32904cf7201918b59b2aca79a9b45afd5c42c04
 
 function TutorLogin() {
   const [formData, setFormData] = useState({

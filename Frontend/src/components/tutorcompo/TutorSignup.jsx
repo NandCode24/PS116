@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-=======
 import React, { useState } from 'react';
 import axios from 'axios';
->>>>>>> c32904cf7201918b59b2aca79a9b45afd5c42c04
+
 
 function TutorSignup() {
   const [formData, setFormData] = useState({
@@ -72,18 +70,14 @@ const handleSubmit = async (e) => {
           <label>Password:</label>
           <input type='password' name='password' value={formData.password} onChange={handleChange} required /><br/>
 
-<<<<<<< HEAD
             <NavLink to='/tutorhome'><button type='submit'>Submit</button></NavLink>
           </div>
         </form>
-=======
-          <button type='submit'>Submit</button>
-        </div>
-      </form>
+
 
       
       {error && <p style={{ color: 'red' }}>❌ {error}</p>}
->>>>>>> c32904cf7201918b59b2aca79a9b45afd5c42c04
+
     </div>
   );
 }
