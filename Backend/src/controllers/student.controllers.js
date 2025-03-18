@@ -13,7 +13,7 @@ export const registerStudent = asyncHandler(async (req, res) => {
         if (
             !firstName?.trim() || 
             !lastName?.trim() || 
-            !birthDate ||  // No .trim() needed for a date
+            !birthDate || 
             !mobileNumber?.toString().trim() || 
             !email?.trim() || 
             !username?.trim() || 
@@ -32,12 +32,12 @@ export const registerStudent = asyncHandler(async (req, res) => {
         }
 
         // Hash password before storing
-        const hashedPassword = await bcrypt.hash(password, 10);
+        // const hashedPassword = await bcrypt.hash(password, 10);
 
         // Insert into database
         await pool.query(
             "INSERT INTO students (first_name, last_name, birth_date, mobile_number, email, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            [firstName, lastName, birthDate, mobileNumber, email, username, hashedPassword]
+            [firstName, lastName, birthDate, mobileNumber, email, username, password]
         );
 
         res.status(201).json({ message: "Student registered successfully!" });
@@ -65,10 +65,14 @@ export const studentLogin = asyncHandler(async (req, res) => {
     const student = students[0];
 
     // 🔐 Verify password (if hashed using bcrypt)
-    const isMatch = await bcrypt.compare(password, student.password);
-    if (!isMatch) {
-        return res.status(401).json({ error: "Invalid username or password" });
-    }
+    // const isMatch = await bcrypt.compare(password, student.password);
+    // if (!isMatch) {
+    //     return res.status(401).json({ error: "Invalid username or password" });
+    // }
 
+    if(student.password != password)
+    {
+        
+    }
     res.status(200).json({ message: "Login successful", student: { id: student.id, username: student.username } });
 });
