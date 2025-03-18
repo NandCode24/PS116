@@ -1,9 +1,12 @@
 import express from "express";
-import { instituteRegister, instituteLogin } from "../controllers/institute.controllers.js";
+import { registerInstitute, instituteLogin } from "../controllers/institute.controllers.js";
 
 const router = express.Router();
 
-router.post("/register", instituteRegister);
+// ✅ Register Institute
+router.post("/register", registerInstitute);
+
+// ✅ Institute Login
 router.post("/login", instituteLogin);
 
 export default router;

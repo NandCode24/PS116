@@ -2,14 +2,12 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
-
-
-
-// import userRouter from "./routes/user.routes.js";
 import studentRouter from "./routes/student.routes.js"
 import tutorRouter from "./routes/tutor.routes.js";
 import instituteRouter from "./routes/institute.routes.js";
 import parentRouter from "./routes/parent.routes.js";
+import instituteRoutes from './routes/institute.routes.js';
+
 
 dotenv.config(); 
 
@@ -36,6 +34,7 @@ app.use("/tutors", tutorRouter);        // Handles Tutor registration & login
 app.use("/students",studentRouter)
 app.use("/institutes", instituteRouter);// Handles Institute registration & login
 app.use("/parents", parentRouter);      // Handles Parent registration & login
+app.use("/institutes",instituteRoutes)
 
 
 
