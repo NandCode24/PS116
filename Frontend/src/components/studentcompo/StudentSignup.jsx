@@ -38,25 +38,25 @@ function StudentSignup() {
             <form onSubmit={handleSubmit}>
                 <div className="info">
                     <label>First Name:</label>
-                    <input type="text" name="firstName" required value={formData.firstName} onChange={handleChange} /><br />
+                    <input type="text" name="firstName" required value={formData.firstName} onChange={handleChange} /><br /><br />
 
                     <label>Last Name:</label>
-                    <input type="text" name="lastName" required value={formData.lastName} onChange={handleChange} /><br />
+                    <input type="text" name="lastName" required value={formData.lastName} onChange={handleChange} /><br /><br />
 
                     <label>Birth Date:</label>
-                    <input type="date" name="birthDate" required value={formData.birthDate} onChange={handleChange} /><br />
+                    <input type="date" name="birthDate" required value={formData.birthDate} onChange={handleChange} /><br /><br />
 
                     <label>Mobile Number:</label>
-                    <input type="tel" name="mobileNumber" required value={formData.mobileNumber} onChange={handleChange} /><br />
+                    <input type="tel" name="mobileNumber" required value={formData.mobileNumber} onChange={handleChange} /><br /><br />
 
                     <label>Email Address:</label>
-                    <input type="email" name="email" required value={formData.email} onChange={handleChange} /><br />
+                    <input type="email" name="email" required value={formData.email} onChange={handleChange} /><br /><br />
 
                     <label>Username:</label>
-                    <input type="text" name="username" required value={formData.username} onChange={handleChange} /><br />
+                    <input type="text" name="username" required value={formData.username} onChange={handleChange} /><br /><br />
 
                     <label>Password:</label>
-                    <input type="password" name="password" required value={formData.password} onChange={handleChange} /><br />
+                    <input type="password" name="password" required value={formData.password} onChange={handleChange} /><br /><br />
 
                    <button type="submit">Submit</button>
                 </div>

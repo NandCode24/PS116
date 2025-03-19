@@ -75,27 +75,27 @@ function InstituteSignup() {
                 <div className='info'>
                     <label>Institute Name:</label>
                     <input type='text' name='instituteName' value={formData.instituteName} onChange={handleChange} required />
-                    {errors.instituteName && <p className="error">{errors.instituteName}</p>}<br />
+                    {errors.instituteName && <p className="error">{errors.instituteName}</p>}<br /><br />
 
                     <label>Institute Password:</label>
                     <input type='password' name='institutePass' value={formData.institutePass} onChange={handleChange} required />
-                    {errors.institutePass && <p className="error">{errors.institutePass}</p>}<br />
+                    {errors.institutePass && <p className="error">{errors.institutePass}</p>}<br /><br />
 
                     <label>University Name:</label>
                     <input type='text' name='universityName' value={formData.universityName} onChange={handleChange} required />
-                    {errors.universityName && <p className="error">{errors.universityName}</p>}<br />
+                    {errors.universityName && <p className="error">{errors.universityName}</p>}<br /><br />
 
                     <label>Email Address:</label>
                     <input type='email' name='emailAddress' value={formData.emailAddress} onChange={handleChange} required />
-                    {errors.emailAddress && <p className="error">{errors.emailAddress}</p>}<br />
+                    {errors.emailAddress && <p className="error">{errors.emailAddress}</p>}<br /><br />
 
                     <label>Institute Address:</label>
                     <input type='text' name='instituteAddress' value={formData.instituteAddress} onChange={handleChange} required />
-                    {errors.instituteAddress && <p className="error">{errors.instituteAddress}</p>}<br />
+                    {errors.instituteAddress && <p className="error">{errors.instituteAddress}</p>}<br /><br />
 
                     <label>Institute Code:</label>
                     <input type='text' name='instituteCode' value={formData.instituteCode} onChange={handleChange} required />
-                    {errors.instituteCode && <p className="error">{errors.instituteCode}</p>}<br />
+                    {errors.instituteCode && <p className="error">{errors.instituteCode}</p>}
 
                     {serverError && <p className="error">{serverError}</p>}<br />
                     {successMessage && <p className="success">{successMessage}</p>}<br />

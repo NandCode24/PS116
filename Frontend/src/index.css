@@ -7,39 +7,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
+    background-color: rgb(19, 25, 34);
 }
   
 a{
     text-decoration: none;
-    color: inherit;
+    /* color: inherit; */
 
 }
 
 /* STYLING FOR INTRO PAGES */
-.Intro {
-    width: 100%;
+.para {
     display: flex;
     justify-content: space-between;
-    align-items: top;
+    
+    /* gap: 3rem; */
 }
-.para {
-    display: top;
-    font-size: 40px;
-    align-items: center;
-    padding: 1%;
-    padding-bottom: 0;
+.details {
+    /* margin-top: 15%; */
+    margin-top: 6%;
+    font-size: larger;
+    text-align: left;
+}
+.image {
+    padding-left: 4rem;
+    margin-top: 4%;
+}
+.intro h1 {
+    font-size: 3rem;
+    display: inline-flex;
+    box-shadow: 0 0 40px 0 rgb(65, 63, 63);
+    padding: 25px;
     border-radius: 50px;
-    width: 100%;
-    height: 150px;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.356);
 }
-
 .btn {
     display: flex;
     font-size: medium;
-    padding-top: 15px;
+    padding-top: 1.6rem;
     justify-content: space-between;
-    
 }
 .btn button {
     padding: 20px;
@@ -49,37 +55,27 @@ a{
     font-size: 16px;
     cursor: pointer;
     color: white;
-    background-color: rgba(15, 14, 14, 0.836);
-    justify-content: space-between;
-}
-button:hover {
-    background-color: rgb(80, 79, 79);
-}
-.details {
-    font-size: large;
-    padding-top: 75px;
-    justify-content: left;
-    width: max;
-    justify-content: last baseline;
-}
-.details p {
-    text-align: left;
+    background-color: rgba(220, 38, 38, 0.9);
 }
 
 /* STYLING FOR REGISTER PAGES */
+
+
+
+
 .register {
 
     display: grid;
     place-items: center;
-    height: 50vh;
-    padding-top: 10rem;
-    padding-left: 0;
-    padding-right: 5rem;
+    /* height: 50vh; */
+    /* padding-top: 10rem; */
+    /* padding-left: 0; */
+    /* padding-right: 5rem; */
     
 }
 
 .register h1{
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.356);
+    box-shadow: 0 0 30px 0 rgb(65, 63, 63);
     border-radius: 35px;
     padding: 20px;
     padding-left: 25px;
@@ -89,53 +85,48 @@ button:hover {
 .registerBtn {
     display: flex;
     font-size: medium;
-    padding-top: 6rem;
+    margin-top: 1.5rem;
     justify-content: space-between;
     gap: 2rem;
 }
 .registerBtn button{
-    padding: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 15px 20px 15px 20px;
     border: 0;
     outline: 0;
     border-radius: 30px;
     font-size: 16px;
     cursor: pointer;
-    color: white;
-    background-color: rgba(15, 14, 14, 0.836);
-    justify-content: space-between;
+    background-color: rgba(220, 38, 38, 0.9);
+    /* justify-content: space-between; */
 }
-.registerBtn button:hover {
-    background-color: rgb(80, 79, 79);
-}
+
 /* STYLING FOR LOGIN SIGNUP PAGES */
 .commonLayout {
-    display: flex;
+    /* display: flex; */
     justify-items: center;
 }
 
 /* LOGIN PART */
 /* Center the login form */
 .commonLayoutInfo {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-top: 1.5rem;
+    /* height: 100vh; */
     /* background-color: #f4f4f4; */
-    margin: 0;
+    
     /* margin-top: -3rem; */
 } 
 
 /* Login form container */
 .login-form {
-    width: 400px;
-    padding: 20px;
-    background: rgb(109, 100, 100);
-    border-radius: 8px;
-    border: 2px solid #444;
+    width: 27rem;
+    padding: 10px;
+    /* background: rgb(109, 100, 100); */
+    /* border-radius: 30px; */
+    border: 2px solid #fff;
     box-shadow: 0px 4px 10px rgba(39, 36, 36, 0.1);
-    color: white;
 }
 
 /* Arrange labels and inputs side by side */
@@ -143,27 +134,26 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
-    padding: 8px;
-    /* border: 1px solid #bbb; */
-    border-radius: 5px;
+    /* margin-bottom: 15px; */
+    padding: 25px;
+    border-radius: 30px;
 }
 
 /* Style labels */
-label {
+.login-form label {
     font-weight: bold;
     width: 30%;
 }
 
 /* Style input fields */
-input {
+.login-form input {
     width: 65%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
     outline: none;
-    color: black;
+    
 }
 
 /* Style the button */
@@ -173,11 +163,39 @@ input {
     background-color: #007bff;
     color: white;
     border: 2px solid #0056b3;
-    border-radius: 5px;
+    /* border-radius: px; */
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 0.5rem;
+}
+.institute {
+    width: 28rem;
+}
+.parent {
+    height: 20rem;
+    overflow-y: auto;
+}
+/* Scrollbar width */
+.parent::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Scrollbar Track */
+.parent::-webkit-scrollbar-track {
+    background: #333; /* Dark background for track */
+    border-radius: 4px; /* Rounded track edges */
+}
+
+/* Scrollbar Handle */
+.parent::-webkit-scrollbar-thumb {
+    background: #007bff; /* Blue scrollbar thumb */
+    border-radius: 4px; /* Rounded scrollbar handle */
+}
+
+/* Scrollbar Handle on Hover */
+.parent::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Darker blue on hover */
 }
 
 /* Button hover effect */
@@ -187,17 +205,39 @@ input {
 
 /* SIGNUP PART */
 .signup {
-    width: 400px; /* Slightly wider than login form */
+    width: 28.6rem; /* Slightly wider than login form */
+    height: 23rem;
     padding: 1rem;
-    margin-top: -4rem;
-    margin-bottom: 1rem;
-    background: rgb(109, 100, 100);    /* Dark background similar to login */
+    /* margin-top: -4rem; */
+    /* margin-bottom: 1rem; */
+    /* background: rgb(109, 100, 100);     */
     border-radius: 8px;
-    border: 2px solid #444;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    color: white;
+    border: 2px solid #fff;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
     text-align: left;
+    overflow-y: auto;
 }
+.signup::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Scrollbar Track */
+.signup::-webkit-scrollbar-track {
+    background: #333; /* Dark background for track */
+    border-radius: 4px; /* Rounded track edges */
+}
+
+/* Scrollbar Handle */
+.signup::-webkit-scrollbar-thumb {
+    background: #007bff; /* Blue scrollbar thumb */
+    border-radius: 4px; /* Rounded scrollbar handle */
+}
+
+/* Scrollbar Handle on Hover */
+.signup::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
 
 .signup form {
     display: flex;
@@ -261,18 +301,15 @@ input {
     background: #0056b3;
 }
 
-input[type="tel"],
+/* input[type="tel"],
 input[type="email"] {
     width: 62%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
+} */
 
-.institute-form {
-    width: 500px; /* Adjust width as needed */
-    margin: auto; /* Center it horizontally */
-}
+
 /* NAVBAR  */
 .navbar {
     width: 100%;

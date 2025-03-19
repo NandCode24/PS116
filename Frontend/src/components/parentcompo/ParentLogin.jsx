@@ -43,30 +43,32 @@ function ParentLogin() {
   };
 
   return (
-    <div className="login-form">
+    <div className="login-form parent">
       <form onSubmit={handleSubmit}>
         {error && <p className="error-message">{error}</p>} {/* Show errors if any */}
+        <div className='row'>
+          <div className="input-group">
+            <label>Username:</label>
+            <input type="text" name="username" value={formData.username} onChange={handleChange} required />
+          </div>
 
-        <div className="input-group">
-          <label>Username:</label>
-          <input type="text" name="username" value={formData.username} onChange={handleChange} required />
+          <div className="input-group">
+            <label>Password:</label>
+            <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+          </div>
         </div>
 
-        <div className="input-group">
-          <label>Password:</label>
-          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-        </div>
+        <div className='row'>
+          <div className="input-group">
+            <label>Student ID:</label>
+            <input type="number" name="studentId" value={formData.studentId} onChange={handleChange} required />
+          </div>
 
-        <div className="input-group">
-          <label>Student ID:</label>
-          <input type="number" name="studentId" value={formData.studentId} onChange={handleChange} required />
+          <div className="input-group">
+            <label>Student Password:</label>
+            <input type="password" name="studentPassword" value={formData.studentPassword} onChange={handleChange} required />
+          </div>
         </div>
-
-        <div className="input-group">
-          <label>Student Password:</label>
-          <input type="password" name="studentPassword" value={formData.studentPassword} onChange={handleChange} required />
-        </div>
-
         <button type="submit" className="login-btn">Login</button>
       </form>
     </div>

@@ -37,7 +37,7 @@ function Institutelogin() {
     };
 
     return (
-        <div className="login-form">
+        <div className="login-form institute">
             <form onSubmit={handleSubmit}>
                 <div className="input-group">
                     <label>Institute Code:</label>
