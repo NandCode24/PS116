@@ -35,6 +35,7 @@ import TutorSignup from './components/tutorcompo/TutorSignup'
 import ParentRegisterLayout from './layout/parent/ParentRegisterLayout'
 import ParentLogin from './components/parentcompo/ParentLogin'
 import ParentSignup from './components/parentcompo/ParentSignup'
+import TutorCreateCourse from "./components/tutorcompo/TutorCreateCourse.jsx";
 
 function App() {
   const router = createBrowserRouter(
@@ -82,7 +83,7 @@ function App() {
           <Route index element={<InstituteHome />}/>
           <Route path='institutecourses' element={<InstituteCourses />}/> 
         </Route>
-
+        <Route path="/tutor/create-course" element={<TutorCreateCourse />} />
       </>
     )
   )

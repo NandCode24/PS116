@@ -77,3 +77,26 @@ export const studentLogin = asyncHandler(async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+// ✅ Get All Courses
+
+export const getAllCourses = asyncHandler(async (req, res) => {
+    const [courses] = await pool.query("SELECT * FROM courses");
+    res.status(200).json(courses);
+});
+
+// ✅ Get Enrolled Courses for a Student
+
+export const getEnrolledCourses = asyncHandler(async (req, res) => {
+    const { studentId } = req.params;
+
+    const [enrolledCourses] = await pool.query(
+        `SELECT c.course_id, c.course_name, c.instructor 
+         FROM enrollments e 
+         JOIN courses c ON e.course_id = c.course_id 
+         WHERE e.student_id = ?`,
+        [studentId]
+    );
+
+    res.status(200).json(enrolledCourses);
+});

@@ -7,3 +7,4 @@ router.post("/register", registerStudent);
 router.post("/login", studentLogin);
 
 export default router;
+ 

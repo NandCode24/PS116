@@ -1,6 +1,7 @@
 import { pool } from "../config/db.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import bcrypt from "bcryptjs";
+import { uploadImage, uploadVideo } from "../config/cloudinary.js";
 
 // ✅ Register Tutor with Password Hashing
 export const registerTutor = asyncHandler(async (req, res) => {
@@ -80,4 +81,54 @@ export const loginTutor = asyncHandler(async (req, res) => {
         message: "✅ Login successful!", 
         tutorId: tutor.tutor_id 
     });
+});
+
+export const createCourse = asyncHandler(async (req, res) => {
+    try {
+      const { tutor_id, title, description, resource_links } = req.body;
+  
+      if (!tutor_id || !title || !description) {
+        return res.status(400).json({ error: "All fields are required" });
+      }
+  
+      // ✅ Upload Thumbnail to Cloudinary
+      const thumbnail_url = req.files["thumbnail"]
+        ? req.files["thumbnail"][0].path
+        : null;
+  
+      // ✅ Upload Video to Cloudinary
+      const video_url = req.files["video"] ? req.files["video"][0].path : null;
+  
+      // ✅ Insert Course Data into MySQL
+      const [result] = await pool.query(
+        "INSERT INTO courses (tutor_id, title, description, thumbnail_url, video_url, resource_links) VALUES (?, ?, ?, ?, ?, ?)",
+        [tutor_id, title, description, thumbnail_url, video_url, resource_links]
+      );
+  
+      res.status(201).json({
+        message: "✅ Course created successfully!",
+        course_id: result.insertId,
+      });
+    } catch (error) {
+      console.error("❌ Error in createCourse:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+  
+export const addResources = asyncHandler(async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { resource_links } = req.body;
+
+        // ✅ Convert JSON Array to String for MySQL Storage
+        const resourceLinksString = JSON.stringify(resource_links);
+
+        // ✅ Update Course with Resources
+        await pool.query("UPDATE courses SET resource_links = ? WHERE id = ?", [resourceLinksString, id]);
+
+        res.status(200).json({ message: "Resources added successfully!" });
+    } catch (error) {
+        console.error("❌ Error in addResources:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
 });
