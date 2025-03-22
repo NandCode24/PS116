@@ -17,6 +17,7 @@ import StudentEnrolled from './pages/student/StudentEnrolled'
 import TutorHomeLayout from './layout/tutor/TutorHomeLayout'
 import TutorHome from './pages/tutor/TutorHome'
 import TutorCourses from './pages/tutor/TutorCourses'
+import TutorCreateCourse from "./components/tutorcompo/TutorCreateCourse.jsx";
 
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 
@@ -35,7 +36,6 @@ import TutorSignup from './components/tutorcompo/TutorSignup'
 import ParentRegisterLayout from './layout/parent/ParentRegisterLayout'
 import ParentLogin from './components/parentcompo/ParentLogin'
 import ParentSignup from './components/parentcompo/ParentSignup'
-import TutorCreateCourse from "./components/tutorcompo/TutorCreateCourse.jsx";
 
 function App() {
   const router = createBrowserRouter(
@@ -77,13 +77,14 @@ function App() {
         <Route path='tutorhome' element={<TutorHomeLayout />}>
           <Route index element={<TutorHome />}/>
           <Route path='tutorcourses' element={<TutorCourses />}/> 
+          <Route path='tutorcreatecourse' element={<TutorCreateCourse />}/>
         </Route>
 
         <Route path='institutehome' element={<InstituteHomeLayout />}>
           <Route index element={<InstituteHome />}/>
           <Route path='institutecourses' element={<InstituteCourses />}/> 
         </Route>
-        <Route path="/tutor/create-course" element={<TutorCreateCourse />} />
+        
       </>
     )
   )

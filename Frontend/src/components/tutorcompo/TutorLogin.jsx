@@ -57,7 +57,7 @@ function TutorLogin() {
           <input type="password" name="password" value={formData.password} onChange={handleChange} required />
         </div>
 
-        <button type="submit" className="login-btn">Login</button>
+        <NavLink to='/tutorhome'><button type="submit" className="login-btn">Login</button></NavLink>
       </form>
 
       {error && <p style={{ color: 'red' }}>❌ {error}</p>}

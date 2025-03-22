@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Institutelogin() {
@@ -52,7 +52,7 @@ function Institutelogin() {
 
                 {error && <p className="error">{error}</p>}
 
-                <button type="submit" className="login-btn">Login</button>
+                <NavLink to='/institutehome'><button type="submit" className="login-btn">Login</button></NavLink>
             </form>
         </div>
     );

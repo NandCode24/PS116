@@ -1,12 +1,12 @@
 import React from 'react'
-import logo from '../../assets/Logo.png'
+import logo from '../../assets/LOGO ARROW SIDE WHITE RED.png'
 import { NavLink } from 'react-router-dom'
 
 function StudentNavbar() {
   return (
     <div className='navbar'>
-        {/* <img src={logo} alt="" /> */}
-        <h1>LEARN SYNC</h1>
+        <img src={logo} alt="" />
+        
         <ul>
             <NavLink to='/studenthome' end><li>Home</li></NavLink>
             <NavLink to='studentenrolled'><li>Enrolled</li></NavLink>
