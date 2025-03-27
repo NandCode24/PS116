@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function ParentLogin() {
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ function ParentLogin() {
   // ✅ Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
 
     try {
       const response = await fetch('http://localhost:5000/parents/login', {
@@ -32,7 +33,9 @@ function ParentLogin() {
 
       if (response.ok) {
         alert('✅ Login successful!');
-        navigate('/parenthome'); // Redirect to parent dashboard
+
+        // ✅ Redirect only if login is successful
+        navigate('/parenthome');
       } else {
         setError(data.error || '❌ Invalid credentials');
       }
@@ -46,6 +49,7 @@ function ParentLogin() {
     <div className="login-form parent">
       <form onSubmit={handleSubmit}>
         {error && <p className="error-message">{error}</p>} {/* Show errors if any */}
+        
         <div className='row'>
           <div className="input-group">
             <label>Username:</label>
@@ -69,7 +73,9 @@ function ParentLogin() {
             <input type="password" name="studentPassword" value={formData.studentPassword} onChange={handleChange} required />
           </div>
         </div>
-        <NavLink to='/parenthome'><button type="submit" className="login-btn">Login</button></NavLink>
+
+        {/* ✅ Removed NavLink */}
+        <button type="submit" className="login-btn">Login</button>
       </form>
     </div>
   );

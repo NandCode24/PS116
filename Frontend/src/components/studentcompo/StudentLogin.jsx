@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function StudentLogin() {
     const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ function StudentLogin() {
     const [errors, setErrors] = useState({});
     const [serverError, setServerError] = useState(""); 
     const [studentId, setStudentId] = useState(null); // ✅ Store student ID
+    const navigate = useNavigate(); // ✅ Use navigate instead of NavLink
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,6 +39,10 @@ function StudentLogin() {
 
             setStudentId(response.data.student_id); // ✅ Store student ID
             alert(`✅ Login Successful! Student ID: ${response.data.student_id}`);
+
+            // ✅ Redirect only if login is successful
+            navigate('/studenthome');
+
         } catch (error) {
             console.error("Login error:", error.response);
             setServerError(error.response?.data?.error || "Invalid credentials");
@@ -61,7 +66,7 @@ function StudentLogin() {
 
                 {serverError && <p className="error">{serverError}</p>} 
 
-                <NavLink to='/studenthome'><button type="submit" className="login-btn">Login</button></NavLink>
+                <button type="submit" className="login-btn">Login</button>
 
                 {studentId && ( // ✅ Display Student ID if login is successful
                     <p className="success">✅ Logged in! Student ID: <strong>{studentId}</strong></p>

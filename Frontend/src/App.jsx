@@ -33,7 +33,6 @@ import TutorRegisterLayout from './layout/tutor/TutorRegisterLayout'
 import TutorLogin from './components/tutorcompo/TutorLogin'
 import TutorSignup from './components/tutorcompo/TutorSignup'
 
-import TutorCreateCourse from "./components/tutorcompo/TutorCreateCourse.jsx";
 import ParentRegisterLayout from './layout/parent/ParentRegisterLayout'
 import ParentLogin from './components/parentcompo/ParentLogin'
 import ParentSignup from './components/parentcompo/ParentSignup'

@@ -8,7 +8,7 @@ import instituteRouter from "./routes/institute.routes.js";
 import parentRouter from "./routes/parent.routes.js";
 import courseRoutes from "./routes/course.routes.js";
 import fileUpload from "express-fileupload";
-
+import chatRoutes from "./routes/chatbot.routes.js";
 
 dotenv.config(); 
 
@@ -37,5 +37,6 @@ app.use("/students", studentRouter);
 app.use("/institutes", instituteRouter);
 app.use("/parents", parentRouter);
 app.use("/courses", courseRoutes);
+app.use("/chat",chatRoutes);
 
 export { app };

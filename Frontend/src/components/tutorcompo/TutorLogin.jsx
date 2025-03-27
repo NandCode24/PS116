@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom'
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function TutorLogin() {
@@ -9,6 +9,7 @@ function TutorLogin() {
   });
 
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // ✅ Hook for navigation
 
   // Handle form input change
   const handleChange = (e) => {
@@ -37,6 +38,9 @@ function TutorLogin() {
       }
       localStorage.setItem('tutorId', tutorId);
 
+      // ✅ Redirect only after successful login
+      navigate('/tutorhome');
+
     } catch (err) {
       console.error("❌ Login error:", err.response);
       setError(err.response?.data?.error || 'Invalid username or password');
@@ -49,7 +53,7 @@ function TutorLogin() {
         <div className="input-group">
           <label>Username:</label>
           <input type="text" name="username" value={formData.username} onChange={handleChange} required />
-          <br/><br/>
+          <br /><br />
         </div>
 
         <div className="input-group">
@@ -57,7 +61,8 @@ function TutorLogin() {
           <input type="password" name="password" value={formData.password} onChange={handleChange} required />
         </div>
 
-        <NavLink to='/tutorhome'><button type="submit" className="login-btn">Login</button></NavLink>
+        {/* ✅ Removed NavLink */}
+        <button type="submit" className="login-btn">Login</button>
       </form>
 
       {error && <p style={{ color: 'red' }}>❌ {error}</p>}

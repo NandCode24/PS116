@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function Institutelogin() {
+function InstituteLogin() {
     const [formData, setFormData] = useState({
         instituteCode: '',
         institutePass: ''
@@ -11,25 +11,28 @@ function Institutelogin() {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    // ✅ Handle Input Changes
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // ✅ Handle Form Submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
 
         try {
             const response = await axios.post('http://localhost:5000/institutes/login', formData, {
-                headers: { "Content-Type": "application/json" }
+                headers: { "Content-Type": "application/json" },
+                maxRedirects: 0
             });
 
-            // ✅ Save Token & Redirect
-            localStorage.setItem('authToken', response.data.token);
-            alert(response.data.message);
-            navigate('/institutehome');
+            if (response.data.token) { // ✅ Check token before redirecting
+                localStorage.setItem('authToken', response.data.token);
+                alert(response.data.message);
+                navigate('/institutehome');
+            } else {
+                setError("Invalid credentials, please try again.");
+            }
+
         } catch (error) {
             console.error("❌ Login Error:", error.response);
             setError(error.response?.data?.error || "Login failed. Try again.");
@@ -42,7 +45,7 @@ function Institutelogin() {
                 <div className="input-group">
                     <label>Institute Code:</label>
                     <input type="text" name="instituteCode" value={formData.instituteCode} onChange={handleChange} required />
-                    <br/><br/>
+                    <br /><br />
                 </div>
 
                 <div className="input-group">
@@ -52,10 +55,10 @@ function Institutelogin() {
 
                 {error && <p className="error">{error}</p>}
 
-                <NavLink to='/institutehome'><button type="submit" className="login-btn">Login</button></NavLink>
+                <button type="submit" className="login-btn">Login</button>
             </form>
         </div>
     );
 }
 
-export default Institutelogin;
+export default InstituteLogin;
