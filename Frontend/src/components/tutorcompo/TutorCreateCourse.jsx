@@ -54,8 +54,8 @@ const TutorCreateCourse = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Create a New Course</h2>
+    <div className="tutorCreate">
+      {/* <h2>Create a New Course</h2> */}
       <form onSubmit={handleSubmit}>
 
         {/* Tutor ID */}

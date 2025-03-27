@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/learnsync_no_bg.png'
+import logo from '../assets/LOGO ARROW WHITE RED.png'
 import { NavLink, Outlet } from 'react-router-dom'
 
 function Intro() {
@@ -8,7 +8,7 @@ function Intro() {
         <h1><b>ONE STOP DESTINATION FOR QUALITY LEARNING</b></h1>
         <div className='para'>
             <div className='image'>
-                <img src={logo} alt="" width='max' height='500px'/>
+                <img src={logo} alt="" />
             </div>
 
             <div className='details'>

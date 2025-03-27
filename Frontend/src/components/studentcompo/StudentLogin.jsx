@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 function StudentLogin() {
     const [formData, setFormData] = useState({
@@ -60,7 +61,7 @@ function StudentLogin() {
 
                 {serverError && <p className="error">{serverError}</p>} 
 
-                <button type="submit" className="login-btn">Login</button>
+                <NavLink to='/studenthome'><button type="submit" className="login-btn">Login</button></NavLink>
 
                 {studentId && ( // ✅ Display Student ID if login is successful
                     <p className="success">✅ Logged in! Student ID: <strong>{studentId}</strong></p>

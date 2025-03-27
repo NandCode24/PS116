@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function ParentLogin() {
   const navigate = useNavigate();
@@ -69,7 +69,7 @@ function ParentLogin() {
             <input type="password" name="studentPassword" value={formData.studentPassword} onChange={handleChange} required />
           </div>
         </div>
-        <button type="submit" className="login-btn">Login</button>
+        <NavLink to='/parenthome'><button type="submit" className="login-btn">Login</button></NavLink>
       </form>
     </div>
   );

@@ -20,19 +20,25 @@ a{
 /* STYLING FOR INTRO PAGES */
 .para {
     display: flex;
+    padding-top: 0.5rem;
     justify-content: space-between;
     
     /* gap: 3rem; */
 }
 .details {
     /* margin-top: 15%; */
-    margin-top: 6%;
+    margin-top: 3rem;
     font-size: larger;
+    
     text-align: left;
 }
 .image {
-    padding-left: 4rem;
-    margin-top: 4%;
+    padding-left: 6rem;
+    margin-top: 2rem;
+    /* margin: 4rem; */
+    /* padding: 2rem; */
+    height: max;
+    width: 25rem;
 }
 .intro h1 {
     font-size: 3rem;
@@ -311,55 +317,106 @@ input[type="email"] {
 
 
 /* NAVBAR  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    background-color: rgb(19, 25, 34);
+}
+
+/* Navbar Styling */
 .navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0.1%;
+    /* padding-top: 0.1rem ; */
 }
 
+/* Ensure navbar items don't inherit the global background */
 .navbar ul {
-    padding: 1rem 30px;
-    border-radius: 30px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.356);
+    /* padding: 1rem 30px; */
+    /* background: transparent; */
 }
+
 .navbar h1 {
     font-size: xx-large;
+    background: transparent;
 }
+
 .navbar ul li {
     display: inline-block;
+    padding: 8px 15px;
     margin: 0 10px;
-    color: #100;
     border-radius: 30px;
-    color: #100;
     cursor: pointer;
     font-size: larger;
+    background: transparent; /* Prevent unwanted background */
 }
+
+/* Button Styling */
 .navbar button {
     font-size: larger;
-    padding : 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 30px;
     border: 0;
     outline: 0;
     border-radius: 30px;
     cursor: pointer;
-    background-color: rgba(226, 54, 54, 0.836);
+    background-color: rgba(220, 38, 38, 0.9);
+    color: white;
 }
-.navbar ul li:hover {
-  color: #575454;
+.navbar img {
+    /* margin-top: -2rem; */
+    margin-top: -1rem;
+    height: max;
+    width: 300px;
 }
+
+/* Navbar List Item Hover */
+/* .navbar ul li:hover {
+    background-color: rgba(220, 38, 38, 0.9);
+    color: white;
+} */
+
+/* Main Demo Section */
 .demo {
     font-size: 4rem;
     display: grid;
-    place-items: center; /* Centers both horizontally & vertically */
+    place-items: center;
     height: 70vh;
+    background: transparent;
 }
+
+/* Fix for Active Link */
 a.active {
-    display: inline-block;
-    padding: 5px 10px;
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 5px 5px;
     margin: 0 10px;
-    background-color: rgba(226, 54, 54, 0.836);
+    background-color: rgba(220, 38, 38, 0.9);
     border-radius: 30px;
+    color: white; /* Ensure text is visible */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline */
 }
+
+
+/* TUTOR CREATE COURSE STYLING */
+.tutorCreate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh;
+  }
+  
+  .tutorCreate form {
+    width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+    padding-top: 20px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+    /* background: white; */
+  }
+  
