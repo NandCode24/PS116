@@ -2,6 +2,8 @@ import React from 'react'
 import './App.css'
 import Intro from './pages/Intro'
 
+
+
 import InstituteHomeLayout from './layout/institute/InstituteHomeLayout'
 import InstituteHome from './pages/institute/InstituteHome'
 import InstituteCourses from './pages/institute/InstituteCourses'
