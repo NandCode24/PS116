@@ -15,6 +15,7 @@ import ParentEnrolled from './pages/parent/ParentEnrolled'
 import StudentHomeLayout from './layout/student/StudentHomeLayout'
 import StudentHome from './pages/student/StudentHome'
 import StudentEnrolled from './pages/student/StudentEnrolled'
+import StudentChatbot from './pages/student/StudentChatbot.jsx'
 
 import TutorHomeLayout from './layout/tutor/TutorHomeLayout'
 import TutorHome from './pages/tutor/TutorHome'
@@ -69,6 +70,7 @@ function App() {
         <Route path='studenthome' element={<StudentHomeLayout />}>
           <Route index element={<StudentHome />}/>
           <Route path='studentenrolled' element={<StudentEnrolled />}/> 
+          <Route path='studentchatbot' element={<StudentChatbot />}/>
         </Route>
 
         <Route path='parenthome' element={<ParentHomeLayout />}>
@@ -94,6 +96,7 @@ function App() {
   return (
     
       <RouterProvider router={router}/>
+      
     
   )
 }
