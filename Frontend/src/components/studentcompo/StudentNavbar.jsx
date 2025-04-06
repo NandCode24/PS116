@@ -10,6 +10,7 @@ function StudentNavbar() {
         <ul>
             <NavLink to='/studenthome' end><li>Home</li></NavLink>
             <NavLink to='studentenrolled'><li>Enrolled</li></NavLink>
+            <NavLink to='studentchatbot'><li>Chatbot</li></NavLink>
         </ul>
         <button>Profile</button>
     </div>
