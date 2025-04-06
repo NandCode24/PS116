@@ -17,7 +17,7 @@ import StudentEnrolled from './pages/student/StudentEnrolled'
 import TutorHomeLayout from './layout/tutor/TutorHomeLayout'
 import TutorHome from './pages/tutor/TutorHome'
 import TutorCourses from './pages/tutor/TutorCourses'
-import TutorCreateCourse from "./components/tutorcompo/TutorCreateCourse.jsx";
+import TutorCreateCourse from "./components/tutorcompo/TutorCreateCourse";
 
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 
