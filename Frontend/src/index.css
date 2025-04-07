@@ -112,6 +112,7 @@ a{
     justify-items: center;
 }
 
+
 /* LOGIN PART */
 /* Center the login form */
 .commonLayoutInfo {
@@ -128,6 +129,7 @@ a{
 /* Login form container */
 .login-form {
     width: 27rem;
+    border-radius:8px ;
     padding: 10px;
     /* background: rgb(109, 100, 100); */
     /* border-radius: 30px; */
